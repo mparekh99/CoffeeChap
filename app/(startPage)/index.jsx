@@ -1,8 +1,20 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { useRouter } from 'expo-router';
+import { View, Text, Image, StyleSheet, TouchableOpacity  } from 'react-native';
 import Colors from '../../constants/colors.ts';
 
 export default function LoginScreen() {
+
+    const router = useRouter();
+
+    const handleSignUp = () => {
+        router.push('/(auth)/signupPage'); 
+    };
+
+    const handleLogin = () => {
+        router.push('/(auth)/loginPage'); 
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -14,15 +26,19 @@ export default function LoginScreen() {
                 <Text style={styles.subtext}>Welcome to the Coffee App!</Text>
             </View>
 
-            
-            <View style={styles.loginContainer}>
-
-                <View style={[styles.buttom, {backgroundColor:Colors.LIGHTORANGE}]}>
-                    <Text style={{textAlign:'center', color:'white', fontSize:15, fontWeight:'bold'}}>Sign Up</Text>
-                </View>
-                <View style={[styles.buttom, { marginTop: 25,  backgroundColor:Colors.DARKBORWN }]}>
-                    <Text style={{textAlign:'center', color:'white', fontSize:15, fontWeight:'bold'}}>Login</Text>
-                </View>
+            <View style={styles.authContainer}>
+                <TouchableOpacity 
+                    style={[styles.button, {backgroundColor: Colors.LIGHTORANGE}]}
+                    onPress={handleSignUp}
+                >
+                    <Text style={styles.buttonText}>Sign Up</Text>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                    style={[styles.button, { marginTop: 25, backgroundColor: Colors.DARKBORWN }]}
+                    onPress={handleLogin}
+                >
+                    <Text style={styles.buttonText}>Login</Text>
+                </TouchableOpacity>
             </View>
         </View>
     );
@@ -54,7 +70,7 @@ const styles = StyleSheet.create({
         fontSize: 50,
         fontWeight: 'bold',
     },
-    loginContainer: {
+    authContainer: {
         padding: 25,
         backgroundColor: 'white',
         height: 250,
@@ -65,12 +81,19 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 5,
         elevation: 5,
+        
     },
-    buttom: {
+    button: {
         width: '100%',
         padding:20,
         //backgroundColor:Colors.PRIMARY,
         borderRadius:40,
 
+    },
+    buttonText: {
+        textAlign: 'center',
+        color: 'white',
+        fontSize: 15,
+        fontWeight: 'bold',
     },
 });
