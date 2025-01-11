@@ -1,18 +1,18 @@
 import React from 'react';
 import { useRouter } from 'expo-router';
 import { View, Text, Image, StyleSheet, TouchableOpacity  } from 'react-native';
-import Colors from '../../constants/colors.ts';
+import Colors from '../constants/colors.ts';
 
 export default function LoginScreen() {
 
     const router = useRouter();
 
     const handleSignUp = () => {
-        router.push('/(auth)/signupPage'); 
+        router.push('/signupPage'); 
     };
 
     const handleLogin = () => {
-        router.push('/(auth)/loginPage'); 
+        router.push('/loginPage'); 
     };
 
     return (
@@ -20,7 +20,7 @@ export default function LoginScreen() {
             <View style={styles.header}>
                 <Text style={styles.text}>Coffee Chap</Text>
                 <Image 
-                    source={require('../../assets/images/coffee_cup1.jpg')}
+                    source={require('../assets/images/coffee_cup1.jpg')}
                     style={styles.image}
                 />
                 <Text style={styles.subtext}>Welcome to the Coffee App!</Text>
