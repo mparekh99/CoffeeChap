@@ -1,8 +1,6 @@
 import { initializeApp } from "firebase/app";
-// import {getReactNativePersistance, initializeAuth} from "firebase/auth";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import { getAuth } from "firebase/auth"; // No need to use setPersistence manually
 import { getFirestore, collection } from "firebase/firestore";
-
 
 const firebaseConfig = {
     apiKey: "AIzaSyBLGHAAI8eRqUfANaCW8FTl0fXrYRo5CTE",
@@ -12,11 +10,16 @@ const firebaseConfig = {
     messagingSenderId: "1097727538277",
     appId: "1:1097727538277:web:4c7467c77a239893af028c",
     measurementId: "G-SBW991Y4V8"
-  };
+};
 
+// Initialize Firebase app
 const app = initializeApp(firebaseConfig);
 
+// Initialize Firebase Auth and Firestore
+const auth = getAuth(app);  // Default persistence will be handled internally
+const db = getFirestore(app);
 
-export const auth = getAuth(app);
-export const db = getFirestore(app);
-export const userRef = collection(db, 'users');
+// Reference to 'users' collection
+const userRef = collection(db, 'users');
+
+export { auth, db, userRef };

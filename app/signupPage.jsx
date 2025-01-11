@@ -32,13 +32,10 @@ export default function SignUpPage() {
         
         if (!response.success) {
           Alert.alert('Sign Up Failed', response.msg);
-        } else {
-          Alert.alert('Success', 'User created successfully!');
-          // router.push('/(screens)/profile');  // Navigate after successful registration
-        }
+        } 
       } catch (error) {
         console.error('Error during registration:', error.message);
-        Alert.alert('Error', 'Something went wrong. Please try again.');
+        // Alert.alert('Error', 'Something went wrong. Please try again.');
       }
     } else {
       Alert.alert('Input Error', 'Please fill out all fields.');
@@ -46,7 +43,7 @@ export default function SignUpPage() {
   };
 
   const handleBack = () => {
-    router.back('/startPage');
+    router.back('startPage');
   };
 
   return (

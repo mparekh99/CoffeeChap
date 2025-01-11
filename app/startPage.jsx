@@ -2,12 +2,20 @@ import React from 'react';
 import { useRouter } from 'expo-router';
 import { View, Text, Image, StyleSheet, TouchableOpacity  } from 'react-native';
 import Colors from '../constants/colors.ts';
+import {doc, getDoc, setDoc} from "firebase/firestore";
+import {db} from '../firebaseConfig.js';
 
 export default function LoginScreen() {
 
     const router = useRouter();
 
     const handleSignUp = () => {
+        const reponse = setDoc(doc(db, "cities", "LA"), {
+            name: "Los Angeles",
+            state: "CA",
+            country: "USA"
+            });
+        
         router.push('/signupPage'); 
     };
 
