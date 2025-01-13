@@ -10,12 +10,6 @@ export default function LoginScreen() {
     const router = useRouter();
 
     const handleSignUp = () => {
-        const reponse = setDoc(doc(db, "cities", "LA"), {
-            name: "Los Angeles",
-            state: "CA",
-            country: "USA"
-            });
-        
         router.push('/signupPage'); 
     };
 

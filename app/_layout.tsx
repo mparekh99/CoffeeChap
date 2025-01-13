@@ -1,16 +1,3 @@
-// import { Stack } from "expo-router";
-
-// export default function RootLayout() {
-//   return (
-//     <Stack>
-//       <Stack.Screen name="index" />
-//       {/* <Stack.Screen name="startPage/index" options={{headerShown:false}} /> */}
-//     </Stack>
-//   );
-// }
-
-
-
 import React, {useEffect} from 'react';
 import { Text, View } from 'react-native';
 import { Slot, useRouter, useSegments } from "expo-router";
@@ -48,25 +35,3 @@ export default function RootLayout() {
     </AuthContextProvider>
   );
 }
-
-// import { Stack } from 'expo-router';
-
-// export default function RootLayout() {
-//   return (
-//     <Stack
-//       screenOptions={{
-//        headerShown:false
-//       }}>
-//       <Stack.Screen name="(startPage)/index" />
-//       {/* <Stack.Screen name="details" /> */}
-//     </Stack>
-//   );
-// }
-
-
-// import { Slot } from "expo-router";
-
-// // Import your global CSS file
-// import "../global.css";
-
-// export default Slot;

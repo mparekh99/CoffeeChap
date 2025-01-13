@@ -21,9 +21,9 @@ export default function LoginPage({ navigation }) {
       try {
         const response = await login(email, password);
 
-        if (!response.success) {
-          Alert.alert('Sign Up Failed', response.msg);
-        } 
+        // if (!response.success) {
+        //   Alert.alert('Login In Failed', response.msg);
+        // } 
       
       } catch (error) {
         console.error('Authentication error:', error.message);

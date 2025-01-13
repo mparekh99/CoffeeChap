@@ -3,7 +3,7 @@ import { getAuth } from "firebase/auth"; // No need to use setPersistence manual
 import { getFirestore, collection } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBLGHAAI8eRqUfANaCW8FTl0fXrYRo5CTE",
+    apiKey: "FILL_IN",
     authDomain: "coffeechap-777ad.firebaseapp.com",
     projectId: "coffeechap-777ad",
     storageBucket: "coffeechap-777ad.firebasestorage.app",
